@@ -69,10 +69,8 @@ public class TestSamples3 {
             "anotheruser@greencity.com, anotherpassword"
     })
     public void signIn(String email, String password) {
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", langButton);
-        langButton.click();
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", en);
-        en.click();// me
+        langButton.click(); // me
+        en.click(); //me
         signInButton.click();
         assertThat(welcomeText.getText(), is("Welcome back!"));
         assertThat(signInDetailsText.getText(), is("Please enter your details to sign in."));
